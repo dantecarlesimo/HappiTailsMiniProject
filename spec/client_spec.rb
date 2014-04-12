@@ -10,7 +10,7 @@ describe Client do
     it "takes four parameters and returns a Client object" do
       expect(@client).to be_an_instance_of(Client)
     end
-  end
+  end"HappiTails shelter at 10 East 21st Street has 0 animals and 0 people"
 
   describe ".to_s" do
     it "prints the Client object's attributes in a sentence" do
