@@ -17,11 +17,9 @@ class Animal
 
   end
 
-  
-
-  # def toys(toys)
-  #   toys.join
-  #  end 
+  def toys
+    @toys
+  end
 
   # When we display the animal using puts or print, the
   #   to_s method is called to pretty print an Animal

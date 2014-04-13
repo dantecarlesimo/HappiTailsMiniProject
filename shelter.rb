@@ -22,7 +22,7 @@ class Shelter
 	def display_clients
 		clientData=[]
 		@clients.each {|name, data| clientData.push(data.to_s)}
-			puts clientData.join("\n")
+		puts clientData.join("\n")
 	end
 
 	def adopt(client_name,animal_name)

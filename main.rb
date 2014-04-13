@@ -39,9 +39,11 @@ while response != 'q'
 		gender=gets.chomp
 		puts"What is the animal's species?"
 		species=gets.chomp
+		puts"What are their favorite toys?"
+		toys=gets.chomp
 		new_animal=Animal.new(name, age, gender, species)
 		$shelter.animals[new_animal.name] = new_animal
-		
+		new_animal.toys << toys
 
 	when "4"
 		puts"What is the Client's name?"
