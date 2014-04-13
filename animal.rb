@@ -1,4 +1,3 @@
-# Define Animal as a class
 class Animal
 
   # Set up accessors and mutators for the attributes of an Animal
