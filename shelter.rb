@@ -17,7 +17,6 @@ class Shelter
 		animalData=[]
 		@animals.each{|name, data| animalData.push(data.to_s)}
 		puts animalData.join("\n")
-
 	end
 
 	def display_clients
@@ -25,6 +24,17 @@ class Shelter
 		@clients.each {|name, data| clientData.push(data.to_s)}
 			puts clientData.join("\n")
 	end
+
+	def adopt(client_name,animal_name)
+		@clients[client_name].pets[animal_name]=@animals[animal_name]
+		@animals.delete(animal_name)
+	end	
+
+	def return(client_name,animal_name)
+		@animals[animal_name]=@clients[client_name].pets[animal_name]
+		@clients[client_name].pets.delete(animal_name)
+	end
+
 end
 
 

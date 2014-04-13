@@ -5,11 +5,20 @@ require_relative 'client'
 require_relative 'shelter'
 require_relative 'data'
 
-puts "*"*80
+puts "*"*60
 puts "Welcome to iAdpot"
-puts "*"*80
+puts "*"*60
 
-puts "Select an option: (1)Display all Animals  (2)Display all Clients  (3)Create new Animal  (4)Create new Client  (5)Adopt an Animal  (6)Return an Animal  (Q)To Quit :"
+puts "Select an option:\n 
+(1)Display all Animals\n  
+(2)Display all Clients\n  
+(3)Create new Animal\n  
+(4)Create new Client\n
+(5)Adopt an Animal\n  
+(6)Return an Animal\n  
+(Q)To Quit\n"
+
+puts "*"*60
 response = gets.chomp.downcase
 while response != 'q'
 
@@ -53,8 +62,8 @@ while response != 'q'
 		$shelter.display_animals
 		puts "Please type the name of the Animal you want to adopt:"
 		animal_name=gets.chomp
-		$shelter.clients[client_name].pets[animal_name]=$shelter.animals[animal_name]
-		$shelter.animals.delete(animal_name)
+		$shelter.adopt(client_name,animal_name) 
+		puts "Congratulation on adopting #{animal_name}!"
 	
 
 	when "6"
@@ -62,12 +71,19 @@ while response != 'q'
 		client_name=gets.chomp
 		puts "What is the name of the pet you are returning?"
 		animal_name=gets.chomp
-		$shelter.animals[animal_name]=$shelter.clients[client_name].pets[animal_name]
-		$shelter.clients[client_name].pets.delete(animal_name)
+		$shelter.return(client_name,animal_name) 
+		puts "Ok - you're all set! We hope you'll adopt again."
 	end
-    
-puts "Select an option: (1)Display all Animals  (2)Display all Clients  (3)Create new Animal  (4)Create new Client  (5)Adopt an Animal  (6)Return an Animal  (Q)To Quit :"
+puts "*"*60   
+puts "Select an option:\n 
+(1)Display all Animals\n  
+(2)Display all Clients\n  
+(3)Create new Animal\n  
+(4)Create new Client\n
+(5)Adopt an Animal\n  
+(6)Return an Animal\n  
+(Q)To Quit :\n"
+puts "*"*60
 response = gets.chomp.downcase
 	
 end	
-
